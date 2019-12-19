@@ -1,4 +1,4 @@
-package com.roger.projetoxbackend.DTO;
+package com.roger.projetoxbackend.dtos;
 
 import java.util.Date;
 

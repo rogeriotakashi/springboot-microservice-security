@@ -1,4 +1,4 @@
-package com.roger.projetoxbackend.service;
+package com.roger.projetoxbackend.services;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -7,9 +7,9 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.roger.projetoxbackend.DTO.AlunosDTO;
-import com.roger.projetoxbackend.entity.Alunos;
-import com.roger.projetoxbackend.repository.AlunosRepository;
+import com.roger.projetoxbackend.dtos.AlunosDTO;
+import com.roger.projetoxbackend.models.Alunos;
+import com.roger.projetoxbackend.repositories.AlunosRepository;
 
 @Service
 public class AlunosService {

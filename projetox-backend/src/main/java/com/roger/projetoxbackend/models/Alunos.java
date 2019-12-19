@@ -1,4 +1,4 @@
-package com.roger.projetoxbackend.entity;
+package com.roger.projetoxbackend.models;
 
 import java.util.Date;
 

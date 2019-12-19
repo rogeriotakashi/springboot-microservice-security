@@ -1,4 +1,4 @@
-package com.roger.projetoxbackend.controller;
+package com.roger.projetoxbackend.resources;
 
 import java.util.List;
 
@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.roger.projetoxbackend.DTO.AlunosDTO;
-import com.roger.projetoxbackend.service.AlunosService;
+import com.roger.projetoxbackend.dtos.AlunosDTO;
+import com.roger.projetoxbackend.services.AlunosService;
 
 @RestController
 @RequestMapping("/alunos")
-public class AlunosController {
+public class AlunosResource {
 	
 	@Autowired
 	AlunosService alunosService;
@@ -31,6 +31,8 @@ public class AlunosController {
 	@PostMapping("/cadastrar")
 	public ResponseEntity<String> cadastrarAluno(@RequestBody AlunosDTO alunoDTO) {
 		alunosService.cadastrarAluno(alunoDTO);		
-		return new ResponseEntity<>(new HttpHeaders(), HttpStatus.OK);
+		return new ResponseEntity<>(new HttpHeaders(), HttpStatus.CREATED);
 	}
+	
+	
 }

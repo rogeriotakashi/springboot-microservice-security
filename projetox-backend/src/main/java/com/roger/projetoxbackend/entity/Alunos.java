@@ -1,5 +1,7 @@
 package com.roger.projetoxbackend.entity;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,12 +10,14 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 @Table(name = "Alunos")
 public class Alunos {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@NotNull
@@ -21,6 +25,14 @@ public class Alunos {
 	
 	@NotNull
 	private String sobrenome;
+	
+	@JsonFormat(pattern = "yyyy-MM-dd")
+	@Column(name = "dat_inscricao")
+	private Date inscricao;
+	
+	@JsonFormat(pattern = "yyyy-MM-dd")	
+	@Column(name = "dat_manut")
+	private Date manut;
 
 	public Alunos() {}
 
@@ -30,15 +42,10 @@ public class Alunos {
 		this.nome = nome;
 		this.sobrenome = sobrenome;
 	}
-	
-
 
 	public Long getId() {
 		return id;
 	}
-
-	
-
 
 	public void setId(Long id) {
 		this.id = id;
@@ -59,6 +66,28 @@ public class Alunos {
 	public void setSobrenome(String sobrenome) {
 		this.sobrenome = sobrenome;
 	}
+
+	public Date getInscricao() {
+		return inscricao;
+	}
+
+	public void setInscricao(Date inscricao) {
+		this.inscricao = inscricao;
+	}
+
+	public Date getManut() {
+		return manut;
+	}
+
+	public void setManut(Date manut) {
+		this.manut = manut;
+	}
+
+	
+
+	
+	
+	
 	
 
 

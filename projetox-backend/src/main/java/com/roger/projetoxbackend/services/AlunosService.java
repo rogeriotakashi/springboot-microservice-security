@@ -28,6 +28,16 @@ public class AlunosService {
 		alunosRepo.saveAndFlush(toEntity(alunoDTO));
 	}
 	
+	public void atualizarAluno(long id, AlunosDTO alunoDTO) {
+		Alunos aluno = toEntity(alunoDTO);
+		aluno.setId(id);
+		alunosRepo.saveAndFlush(aluno);
+	}
+	
+	public void deletarAluno(long id) {
+		alunosRepo.deleteById(id);
+	}
+	
 	private static AlunosDTO toDTO(Alunos aluno) {
 		AlunosDTO alunoDTO = new AlunosDTO();
 		BeanUtils.copyProperties(aluno, alunoDTO);
@@ -39,4 +49,8 @@ public class AlunosService {
 		BeanUtils.copyProperties(alunoDTO, alunosEntity);
 		return alunosEntity;
 	}
+
+	
+
+	
 }

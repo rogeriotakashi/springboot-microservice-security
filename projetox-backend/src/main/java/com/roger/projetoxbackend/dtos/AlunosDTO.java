@@ -4,6 +4,8 @@ import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import io.swagger.annotations.ApiModelProperty;
+
 public class AlunosDTO {
 
 	private String nome;
@@ -11,9 +13,11 @@ public class AlunosDTO {
 	private String sobrenome;
 	
 	@JsonFormat(pattern = "dd/MM/yyyy")
+	@ApiModelProperty(notes = "O formato da data deve ser dd/MM/yyyy")
 	private Date inscricao;
 	
 	@JsonFormat(pattern = "dd/MM/yyyy")
+	@ApiModelProperty(notes = "O formato da data deve ser dd/MM/yyyy")
 	private Date manut;
 
 	public AlunosDTO() {}

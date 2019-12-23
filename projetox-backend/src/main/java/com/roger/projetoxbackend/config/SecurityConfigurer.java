@@ -20,14 +20,14 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	private MyUserDetailsService myUserDetailService;
+	
+	@Autowired
+	JwtRequestFilter jwtRequestFilter;
 
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(myUserDetailService);
 	}
-	
-	@Autowired
-	JwtRequestFilter jwtRequestFilter;
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {

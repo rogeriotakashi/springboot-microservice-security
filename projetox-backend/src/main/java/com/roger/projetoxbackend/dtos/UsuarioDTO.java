@@ -6,21 +6,42 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 import io.swagger.annotations.ApiModelProperty;
 
-public class AlunosDTO {
+public class UsuarioDTO {
+
+	private String usuario;
+
+	private String senha;
 
 	private String nome;
-	
+
 	private String sobrenome;
-	
+
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	@ApiModelProperty(notes = "O formato da data deve ser dd/MM/yyyy")
 	private Date inscricao;
-	
+
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	@ApiModelProperty(notes = "O formato da data deve ser dd/MM/yyyy")
 	private Date manut;
 
-	public AlunosDTO() {}
+	public UsuarioDTO() {
+	}
+
+	public String getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
 
 	public String getNome() {
 		return nome;
@@ -60,6 +81,4 @@ public class AlunosDTO {
 				+ "]";
 	}
 
-
-	
 }

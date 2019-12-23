@@ -13,34 +13,46 @@ import javax.validation.constraints.NotNull;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
-@Table(name = "Alunos")
-public class Alunos {
+@Table(name = "Usuario")
+public class Usuario {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
+	@NotNull
+	private String usuario;
+
+	@NotNull
+	private String senha;
+
 	@NotNull
 	private String nome;
-	
+
 	@NotNull
 	private String sobrenome;
-	
+
 	@JsonFormat(pattern = "yyyy-MM-dd")
 	@Column(name = "dat_inscricao")
 	private Date inscricao;
-	
-	@JsonFormat(pattern = "yyyy-MM-dd")	
+
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	@Column(name = "dat_manut")
 	private Date manut;
 
-	public Alunos() {}
+	public Usuario() {
+	}
 
-	public Alunos(Long id, @NotNull String nome, @NotNull String sobrenome) {
+	public Usuario(Long id, @NotNull String usuario, @NotNull String senha, @NotNull String nome,
+			@NotNull String sobrenome, Date inscricao, Date manut) {
 		super();
 		this.id = id;
+		this.usuario = usuario;
+		this.senha = senha;
 		this.nome = nome;
 		this.sobrenome = sobrenome;
+		this.inscricao = inscricao;
+		this.manut = manut;
 	}
 
 	public Long getId() {
@@ -49,6 +61,22 @@ public class Alunos {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public String getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 
 	public String getNome() {
@@ -83,18 +111,4 @@ public class Alunos {
 		this.manut = manut;
 	}
 
-	
-
-	
-	
-	
-	
-
-
-
-	
-	
-	
-	
-	
 }

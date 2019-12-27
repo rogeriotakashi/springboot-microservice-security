@@ -13,4 +13,5 @@ Repositorio com exemplos simples de atividades com Springboot
 - OAuth para integração com serviços terceiros
 - Aprimorar o JWT Authorization
 - Dockerfile
+- Documentação
 

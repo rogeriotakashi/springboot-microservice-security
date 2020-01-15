@@ -30,7 +30,6 @@ public class AuthenticationResource {
 	@Autowired
 	private JwtUtil jwtTokenUtil;
 	
-	@CrossOrigin(origins = "http://localhost:4200")
 	@PostMapping("/authenticate")
 	public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest request) throws Exception{
 		try {

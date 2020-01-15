@@ -13,7 +13,7 @@ spring:
     console:
       enabled: true
   application:
-    name: usuario-service
+    name: auth-service
 
       
 jwt:
